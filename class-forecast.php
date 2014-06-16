@@ -6,8 +6,17 @@ namespace JPry;
  */
 class Forecast_IO {
 
+	/**
+	 * The API key.
+	 *
+	 * @var string
+	 */
 	private $api_key;
-	const API_URL;
+	
+	/**
+	 *
+	 */
+	const API_URL = 'https://api.forecast.io/';
 	
 	/**
 	 * Get the single instance of this class.
@@ -27,8 +36,35 @@ class Forecast_IO {
 		return $instance;
 	}
 	
+	/**
+	 * Constructor.
+	 * 
+	 * Set up the API Key
+	 * 
+	 * @since 1.0
+	 * 
+	 * @param string $api_key The API Key to use when requesting data.
+	 */
 	protected function __construct( $api_key ) {
 		$this->api_key = $api_key;
+	}
+	
+	
+	private function request( $latitude, $longitude, $time = null, $options = array() ) {
+		
+		$request_url = self::API_URL
+			. $this->api_key
+			. '/'
+			. $latitude
+			. ','
+			. $longitude
+			. ( is_null( $time ) ) ? '' : ",${time}";
+			
+		if ( ! empty( $options ) ) {
+			$request_url .= "?" . http_build_query( $options );	
+		}
+		
+		$response = json_decode(  );
 	}
 
 }
