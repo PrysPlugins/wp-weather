@@ -1,0 +1,17 @@
+{
+  "generator-plugin-wp": {
+    "name": "WP Weather",
+    "homepage": "http://jeremypry.com/",
+    "description": "A simple weather plugin utilizing the Forecast.io service",
+    "version": "0.1.0",
+    "author": "Jeremy Pry",
+    "authoremail": "support@jpry.com",
+    "authorurl": "http://jeremypry.com/",
+    "license": "GPLv2",
+    "slug": "wp-weather",
+    "classname": "JPry_WP_Weather",
+    "classprefix": "JPWPW_",
+    "prefix": "wp_weather",
+    "year": 2015
+  }
+}

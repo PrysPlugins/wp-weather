@@ -1,0 +1,17 @@
+{
+	"name": "wp-weather",
+	"title": "WP Weather",
+	"version": "0.1.0",
+	"description": "A simple weather plugin utilizing the Forecast.io service",
+	"author": {
+		"name": "Jeremy Pry",
+		"url": "http://jeremypry.com/"
+	},
+	"license": "GPLv2",
+	"devDependencies": {
+	    "grunt": "latest",
+	    "grunt-contrib-watch": "latest",
+	    "grunt-wp-i18n": "latest",
+	    "load-grunt-tasks": "latest"
+	}
+}
