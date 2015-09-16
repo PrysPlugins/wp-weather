@@ -1,18 +1,17 @@
-=== WP Forecast ===
-Contributors: JPry
-Donate link: 
-Tags: weather, forecast
-Requires at least: 3.9.1
-Tested up to: 3.9.1
-Stable tag: 0.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+=== WP Weather ===
+Contributors:      JPry
+Donate link:       http://jeremypry.com/
+Tags:              weather, forecast
+Requires at least: 4.3
+Tested up to:      4.3
+Stable tag:        0.1.0
+License:           GPLv2
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Display weather on your site utilizing the Forecast.io API
 
 == Description ==
 
-A weather plugin like none other! 
+A simple weather plugin utilizing the Forecast.io service
 
 == Installation ==
 
@@ -22,12 +21,24 @@ A weather plugin like none other!
 4. If you don't have an account already, sign up for an account at https://developer.forecast.io to obtain an API key.
 5. Copy your API key and paste it into the Plugin settings
 
+= Manual Installation =
+
+1. Upload the entire `/wp-weather` directory to the `/wp-content/plugins/` directory.
+2. Activate WP Weather through the 'Plugins' menu in WordPress.
+
 == Frequently Asked Questions ==
 
 None yet. Start asking!
 
+== Screenshots ==
+
+
 == Changelog ==
 
-= 0.1 =
-* Created the plugin
+= 0.1.0 =
+* First release
 
+== Upgrade Notice ==
+
+= 0.1.0 =
+First Release
