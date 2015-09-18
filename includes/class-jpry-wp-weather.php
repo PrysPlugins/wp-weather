@@ -24,6 +24,7 @@ class JPry_WP_Weather {
 	/**
 	 * The classes tied to this plugin.
 	 *
+	 * @since 0.1.0
 	 * @var array
 	 */
 	protected $classes = array();
@@ -148,6 +149,7 @@ class JPry_WP_Weather {
 	 */
 	public function hooks() {
 		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'widgets_init', array( $this, 'widgets' ) );
 	}
 
 	/**
@@ -228,6 +230,15 @@ class JPry_WP_Weather {
 		echo '<div id="message" class="error">';
 		echo '<p>' . sprintf( __( 'WP Weather is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'wp-weather' ), admin_url( 'plugins.php' ) ) . '</p>';
 		echo '</div>';
+	}
+
+	/**
+	 * Register our custom widgets.
+	 *
+	 * @since 0.1.0
+	 */
+	public function widgets() {
+		register_widget( 'JPry_WP_Weather_Widget' );
 	}
 
 	/**
