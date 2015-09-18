@@ -29,6 +29,13 @@ class JPry_WP_Weather {
 	protected $forecast = null;
 
 	/**
+	 * The options object.
+	 *
+	 * @var JPry_Weather_Options
+	 */
+	protected $options = null;
+
+	/**
 	 * Path of plugin directory.
 	 *
 	 * @since 0.1.0
@@ -89,14 +96,35 @@ class JPry_WP_Weather {
 		// Attach other plugin classes to the base plugin class.
 	}
 
-
+	/**
+	 * Get the forecast API object.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @return JPry_Forecast_IO
+	 */
 	public function get_forecaster() {
 		if ( is_null( $this->forecast ) ) {
-			// TODO: Include the API key from somewhere
-			$this->forecast = new JPry_Forecast_IO('');
+			$options        = $this->get_options();
+			$this->forecast = new JPry_Forecast_IO( $options->get( 'apikey' ) );
 		}
 
 		return $this->forecast;
+	}
+
+	/**
+	 * Get the options object.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @return JPry_Weather_Options
+	 */
+	public function get_options() {
+		if ( is_null( $this->options ) ) {
+			$this->options = new JPry_Weather_Options();
+		}
+
+		return $this->options;
 	}
 
 	/**
@@ -135,7 +163,9 @@ class JPry_WP_Weather {
 	 * @since 0.1.0
 	 */
 	function _activate() {
-
+		// Create our options in the database
+		$options = $this->get_options();
+		$options->create();
 	}
 
 	/**
