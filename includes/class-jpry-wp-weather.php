@@ -22,6 +22,13 @@ class JPry_WP_Weather {
 	protected $basename = '';
 
 	/**
+	 * The forecast object.
+	 *
+	 * @var JPry_Forecast_IO
+	 */
+	protected $forecast = null;
+
+	/**
 	 * Path of plugin directory.
 	 *
 	 * @since 0.1.0
@@ -80,6 +87,16 @@ class JPry_WP_Weather {
 	 */
 	function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
+	}
+
+
+	public function get_forecaster() {
+		if ( is_null( $this->forecast ) ) {
+			// TODO: Include the API key from somewhere
+			$this->forecast = new JPry_Forecast_IO('');
+		}
+
+		return $this->forecast;
 	}
 
 	/**
