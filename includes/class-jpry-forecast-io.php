@@ -59,7 +59,7 @@ class JPry_Forecast_IO {
 		// Check each one, and throw an exception if not numeric
 		foreach ( $args as $arg ) {
 			if ( ! is_numeric( $arg ) ) {
-				throw new \Exception( "You must pass a numeric value." );
+				throw new \Exception( __( 'You must pass a numeric value.', 'wp-weather' ) );
 			}
 		}
 	}
@@ -109,7 +109,7 @@ class JPry_Forecast_IO {
 
 		$data = json_decode( $response, true );
 		if ( is_null( $data ) ) {
-			throw new \Exception( "Unable to decode API response." );
+			throw new \Exception( __( 'Unable to decode API response.', 'wp-weather' ) );
 		}
 
 		return $data;

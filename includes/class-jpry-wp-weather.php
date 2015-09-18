@@ -133,7 +133,7 @@ class JPry_WP_Weather {
 	public static function get_instance( $file = null ) {
 		if ( null === self::$single_instance ) {
 			if ( is_null( $file ) ) {
-				throw new \Exception( "File is needed to create new class instance." );
+				throw new \Exception( __( 'A file is needed to create new class instance.', 'wp-weather') );
 			}
 			self::$single_instance = new self( $file );
 		}
